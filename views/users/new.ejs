@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>New User</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>New User</h1>
+    <form method="POST" action="/users">
+      <!-- set urlEncoded to true to format as an object -->
+      <input type="text" name="user[userName]">
+      <input type="text" name="user[email]">
+      <button>Create</button>
+    </form>
+  </body>
+</html>
