@@ -1,21 +1,11 @@
 var express = require('express');
 var router = express.Router();
 
-var User = require('../models/user');
-var controller = require('../controllers/users');
+var users = require('../controllers/users');
 
-/* GET users listing. */
-router.get('/', controller.index);
-
-router.get('/:id', controller.show);
-
-router.get('/new', function(req, res, next) {
-  res.render('users/new');
-});
-
-router.post('/', function(req, res, next) {
-  User.create(req.body.user);
-  res.redirect('/users');
-});
+router.get('/',    users.index);
+router.get('/new', users.new);
+router.post('/',   users.create);
+router.get('/:id', users.show);
 
 module.exports = router;
